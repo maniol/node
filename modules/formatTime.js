@@ -1,7 +1,7 @@
 function formatTime(input) {
-	hours = Math.floor(input / 3600);
-	minutes = Math.floor(input % 3600 / 60);
-	seconds = Math.floor(input % 3600 % 60);
+	var hours = Math.floor(input / 3600);
+	var minutes = Math.floor(input % 3600 / 60);
+	var seconds = Math.floor(input % 3600 % 60);
 	if (hours > 1 || hours == 0) {
 		var hoursDisplay = hours + ' hours ';
 	} else {
