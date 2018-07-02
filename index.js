@@ -1,23 +1,22 @@
 var http = require('http');
 var fs = require('fs');
+
 var server = http.createServer();
 
 server.on('request', function (request, response) {
 	response.setHeader('Content-Type', 'text/html; charset=utf-8');
-	var htmlFile = readFile();
 	if (request.method === 'GET' && request.url ==='/') {
-			response.write(htmlFile);
+		fs.readFile('index.html', function(err, html){
+			response.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
+			response.write(html);
 			response.end();
+		});
 	} else {
-					response.statusCode = 404;
-					response.write('<img src=\'404.jpg\' alt=\'404\'>');
-					response.end();
+					fs.readFile('404.jpg', 'binary', function(error, file){
+						response.writeHead(404, {'Content-Type': 'image/jpg'});
+						response.write(file, 'binary');
+						response.end();
+					});
 	}
 });
 server.listen(8080);
-
-function readFile(){
-	fs.readFile('index.html', function(err, data){
-		return data;
-	});
-}
