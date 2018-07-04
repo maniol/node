@@ -1,0 +1,30 @@
+img {
+	display: block;
+	margin: auto;
+	width: 50%;
+}
+
+h1 {
+	text-align: center;
+}
+
+.icon {
+	text-align: center;
+	font-size: 100px;
+	padding: 10px;
+}
+
+form {
+	text-align: center;
+	font-size: 20px;
+}
+
+body {
+	background-color: #00efbf;
+	color: #00A077;
+}
+
+input[type=text] {
+	border: 2px dotted #999;
+	border-radius: 15px;
+}
